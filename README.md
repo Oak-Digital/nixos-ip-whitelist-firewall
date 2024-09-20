@@ -1,5 +1,7 @@
 # NixOS ip based allowed ports
 
+[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/Oak-Digital/nixos-ip-whitelist-firewall/badge)](https://flakehub.com/flake/Oak-Digital/nixos-ip-whitelist-firewall)
+
 This NixOS module lets you open ports in your firewall that is only accepted by certain ips.
 
 Let's say you have a postgresql database that you want to access from another server, then instead of opening the port to the entire world, you can just open the port to specific ips.

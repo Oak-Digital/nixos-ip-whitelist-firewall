@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A simple NixOS module for ip whitelisting certain ports";
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
