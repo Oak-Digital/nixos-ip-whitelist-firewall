@@ -55,7 +55,6 @@ in
         # Allow access to the specified ports from the specified IP addresses.
         ${lib.concatMapStringsSep "\n" (portWithIps: ''
           ${lib.concatMapStringsSep "\n" (ip: ''
-            echo "executing: ${createCommand "tcp" portWithIps.port ip}"
             ${createCommand "tcp" portWithIps.port ip}
           '') portWithIps.ips}
         '') config.networking.firewall.ipBasedAllowedTCPPorts}
@@ -63,7 +62,6 @@ in
         # Allow access to the specified ports from the specified IP addresses.
         ${lib.concatMapStringsSep "\n" (portWithIps: ''
           ${lib.concatMapStringsSep "\n" (ip: ''
-            echo "executing: ${createCommand "udp" portWithIps.port ip}"
             ${createCommand "udp" portWithIps.port ip}
           '') portWithIps.ips}
         '') config.networking.firewall.ipBasedAllowedUDPPorts}
@@ -79,7 +77,6 @@ in
         # Drop ip based allowed tcp ports rules
         ${lib.concatMapStringsSep "\n" (portWithIps: ''
           ${lib.concatMapStringsSep "\n" (ip: ''
-            echo "executing: ${removeCommand "udp" portWithIps.port ip}"
             ${removeCommand "tcp" portWithIps.port ip}
           '') portWithIps.ips}
         '') config.networking.firewall.ipBasedAllowedTCPPorts}
@@ -87,7 +84,6 @@ in
         # Drop ip based allowed udp ports rules
         ${lib.concatMapStringsSep "\n" (portWithIps: ''
           ${lib.concatMapStringsSep "\n" (ip: ''
-            echo "executing: ${removeCommand "udp" portWithIps.port ip}"
             ${removeCommand "udp" portWithIps.port ip}
           '') portWithIps.ips}
         '') config.networking.firewall.ipBasedAllowedUDPPorts}
