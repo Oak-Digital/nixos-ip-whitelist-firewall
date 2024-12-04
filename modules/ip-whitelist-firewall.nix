@@ -15,7 +15,7 @@ let
       };
 
       ips = mkOption {
-        type = with types; listOf string;
+        type = with types; listOf str;
         default = [ ];
         description = ''
           The IP addresses that are allowed to access the port.
